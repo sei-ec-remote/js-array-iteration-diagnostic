@@ -98,7 +98,6 @@ const developersObject = developersArray.reduce((dev, arr) => {
   return arr
 }, {javascript: [], ruby: []})
 
-console.log(developersObject)
 /* !!! DO NOT MODIFY ANYTHING BELOW HERE !!! */
 module.exports = {
       mayHoliday,
