@@ -20,7 +20,7 @@ Question 1
 
 Given the array above, return the element in the `holidays` array that contains the value of `may` in the `month` key.
 */
-const mayHoliday = holidays.find(() => {
+const mayHoliday = holidays.find((mth) => {return mth.month === 'may'
 })
 
 const words = ['cat', 'bath', 'orange', 'tap', 'bay', 'ha', 'extravagant']
@@ -30,7 +30,7 @@ Question 2
 
 Given the array above, return all elements in the `words` array that have less than 4 characters. 
 */
-const wordsWithLessThanFourLetters = words.filter(() => {
+const wordsWithLessThanFourLetters = words.filter((word) => {return word.length < 4
 
 })
 
@@ -41,7 +41,7 @@ const words = ['cat', 'bath', 'orange', 'tap', 'bay', 'ha', 'extravagant']
 
 Given the array above, return true if all of the strings in the `words` array contain the letter `a`. 
 */
-const doesEveryWordContainA = words.every(() => {
+const doesEveryWordContainA = words.every((element) => { return "a"
 
 })
 
@@ -53,6 +53,7 @@ const words = ['cat', 'bath', 'orange', 'tap', 'bay', 'ha', 'extravagant']
 Given the array above, return true if any of the strings in the `words` array contain the letter `x`. 
 */
 const doesAnyWordContainX = words.some(() => {
+  return "X"
 
 })
 
