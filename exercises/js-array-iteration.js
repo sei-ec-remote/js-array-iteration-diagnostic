@@ -20,7 +20,8 @@ Question 1
 
 Given the array above, return the element in the `holidays` array that contains the value of `may` in the `month` key.
 */
-const mayHoliday = holidays.find(() => {
+const mayHoliday = holidays.find(holiday => {
+  return holiday.month == "may"
 })
 
 const words = ['cat', 'bath', 'orange', 'tap', 'bay', 'ha', 'extravagant']
@@ -30,9 +31,7 @@ Question 2
 
 Given the array above, return all elements in the `words` array that have less than 4 characters. 
 */
-const wordsWithLessThanFourLetters = words.filter(() => {
-
-})
+const wordsWithLessThanFourLetters = words.filter(word => word.length < 4)
 
 /*
 Question 3
@@ -41,9 +40,7 @@ const words = ['cat', 'bath', 'orange', 'tap', 'bay', 'ha', 'extravagant']
 
 Given the array above, return true if all of the strings in the `words` array contain the letter `a`. 
 */
-const doesEveryWordContainA = words.every(() => {
-
-})
+const doesEveryWordContainA = words.every(word => word.includes("a"))
 
 /*
 Question 4
@@ -52,9 +49,7 @@ const words = ['cat', 'bath', 'orange', 'tap', 'bay', 'ha', 'extravagant']
 
 Given the array above, return true if any of the strings in the `words` array contain the letter `x`. 
 */
-const doesAnyWordContainX = words.some(() => {
-
-})
+const doesAnyWordContainX = words.some(word => word.includes('x'))
 
 const developersArray = [
 	{ name: 'ralph', language: 'javascript' },
@@ -88,8 +83,13 @@ The finished object should look like:
   ]
 }
 */
-const developersObject = developersArray.reduce(() => {
-
+const developersObject = developersArray.reduce((languages, devs) => {
+  if (devs.language == "javascript") {
+    languages.javascript.push(devs)
+  } else {
+    languages.ruby.push(devs)
+  }
+  return languages
 }, {javascript: [], ruby: []})
 
 /* !!! DO NOT MODIFY ANYTHING BELOW HERE !!! */
