@@ -42,8 +42,8 @@ const words = ['cat', 'bath', 'orange', 'tap', 'bay', 'ha', 'extravagant']
 
 Given the array above, return true if all of the strings in the `words` array contain the letter `a`. 
 */
-const doesEveryWordContainA = words.every(() => {
-  return ('a')
+const doesEveryWordContainA = words.every((word) => {
+  return word.includes('a')
 })
 
 /*
@@ -53,8 +53,8 @@ const words = ['cat', 'bath', 'orange', 'tap', 'bay', 'ha', 'extravagant']
 
 Given the array above, return true if any of the strings in the `words` array contain the letter `x`. 
 */
-const doesAnyWordContainX = words.some(() => {
-  return ('x')
+const doesAnyWordContainX = words.some((word) => {
+  return word.includes('x')
 })
 
 const developersArray = [
@@ -89,8 +89,13 @@ The finished object should look like:
   ]
 }
 */
-const developersObject = developersArray.reduce(() => {
-  return developersArray.length.name
+const developersObject = developersArray.reduce((array1, array2) => {
+  if (array2.language == 'javascript'){
+    array1.javascript.push(array2)
+  } else {
+    array1.ruby.push(array2)
+  }
+  return array1
 }, {javascript: [], ruby: []})
 
 /* !!! DO NOT MODIFY ANYTHING BELOW HERE !!! */
