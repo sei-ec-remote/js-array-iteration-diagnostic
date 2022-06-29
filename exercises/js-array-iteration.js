@@ -89,8 +89,13 @@ The finished object should look like:
   ]
 }
 */
-const developersObject = developersArray.reduce(() => {
 
+const developersObject = developersArray.reduce((array1, array2) => { if (array2.language == 'javascript'){
+  array1.javascript.push(array2)
+} else {
+  array1.ruby.push(array2)
+}
+return array1
 }, {javascript: [], ruby: []})
 
 /* !!! DO NOT MODIFY ANYTHING BELOW HERE !!! */
